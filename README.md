@@ -5,7 +5,7 @@ Set the following variables in the .env
 
 `SECRETS_SERVER_URL` points to the Laravel Secrets server (use HTTPS in production)
 
-`SECRETS_PUBLIC_KEY` public key generated on Laravel Secrets server
+`SECRETS_PUBLIC_KEY` path to public key generated on Laravel Secrets server
 
 `SECRETS_SERVER_TOKEN` token generated on Laravel Secrets server
 
