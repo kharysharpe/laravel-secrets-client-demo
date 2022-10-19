@@ -12,7 +12,7 @@ Set the following variables in the .env
 
 The public key and token are generated using `php artisan client:new` on the Laravel Secrets server
 
-# syntax
+## Syntax
 
 Store secret
 ```
@@ -35,14 +35,14 @@ secrets('myapp', 'private-token');
 ```
 
 
-
-## Test Storage
+## Sample Code
+### Test Storage
 app/Console/Commands/ClientStore.php
 ```
 php artisan client:set
 ```
 
-## Test Retrieval
+### Test Retrieval
 app/Console/Commands/ClientRetrieve.php
 ```
 php artisan client:get
