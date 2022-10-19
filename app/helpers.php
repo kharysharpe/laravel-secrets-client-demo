@@ -7,6 +7,8 @@ function secrets($store, $key, $value = null)
 {
     $publicKey = PublicKey::fromFile(env('SECRETS_PUBLIC_KEY'));
 
+    $hash = sha1($key . env('SECRETS_SALT'));
+
     if ($value) {
         $encryptedData = base64_encode($publicKey->encrypt($value));
 
@@ -15,8 +17,7 @@ function secrets($store, $key, $value = null)
             ->post(
                 env('SECRETS_SERVER_URL').'/api/v1/secrets',
                 [
-                    'store' => $store,
-                    'key' => $key,
+                    'key' => $hash,
                     'value' => $encryptedData,
                 ]
             );
@@ -27,7 +28,7 @@ function secrets($store, $key, $value = null)
     $http = Http::withToken(env('SECRETS_TOKEN'))
         ->acceptJson()
         ->get(
-            env('SECRETS_SERVER_URL')."/api/v1/secrets?store={$store}&key={$key}"
+            env('SECRETS_SERVER_URL')."/api/v1/secrets/{$hash}"
         );
 
     $response = json_decode((string) $http->getBody());
