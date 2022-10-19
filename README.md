@@ -11,6 +11,7 @@ Set the following variables in the .env
 
 
 The public key and token are generated using `php artisan client:new` on the Laravel Secrets server
+
 ## Test Storage
 app/Console/Commands/ClientStore.php
 ```
