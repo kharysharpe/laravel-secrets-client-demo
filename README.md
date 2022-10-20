@@ -1,5 +1,7 @@
 # Laravel Secrets Demo
 
+This is a demo client showing how to use to Laravel Secrets Server (https://github.com/kharysharpe/laravel-secrets-server) 
+
 ## Configuration
 Set the following variables in the .env
 
@@ -20,7 +22,7 @@ secrets(store, key, value);
 ```
 Example:
 ```
-secrets('myapp', 'private-token', 'qwerty1234567');
+secrets('service-foo.private-token', 'qwerty1234567');
 ```
 
 
@@ -31,7 +33,7 @@ secrets(store, key);
 
 Example:
 ```
-secrets('myapp', 'private-token');
+secrets('service-foo.private-token');
 ```
 
 
