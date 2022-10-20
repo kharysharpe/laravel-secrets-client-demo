@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Http;
 use Spatie\Crypto\Rsa\PublicKey;
 
-function secrets($store, $key, $value = null)
+function secrets($key, $value = null)
 {
     $publicKey = PublicKey::fromFile(env('SECRETS_PUBLIC_KEY'));
 
